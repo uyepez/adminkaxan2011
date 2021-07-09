@@ -13,6 +13,14 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
+import { LoginComponent } from './auth/login/login.component';
+import { RecuperaComponent } from './auth/recupera/recupera.component';
+import { RecuperacodigoComponent } from './auth/recuperacodigo/recuperacodigo.component';
+import { RegistroComponent } from './auth/registro/registro.component';
+import { NuevapromoComponent } from './pages/nuevapromo/nuevapromo.component';
+
+//editor de tetxo
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   imports: [
@@ -23,9 +31,10 @@ import { ComponentsModule } from "./components/components.module";
     NgbModule,
     RouterModule,
     AppRoutingModule,
+    AngularEditorModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, LoginComponent, RecuperaComponent, RecuperacodigoComponent, RegistroComponent, NuevapromoComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

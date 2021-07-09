@@ -1,0 +1,194 @@
+<div class=" content">
+    <div class=" row">
+        <div class=" col-md-12">
+            <div class=" card">
+
+                <div class="card-body">
+
+                    <form action="">
+                        <div class=" typography-line">
+                            <h1>Nueva promo:</h1>
+                        </div>
+                            <div class="container">
+                        
+                                <div class="row">
+
+                                    <div class=" col-md-6 pr-md-1">
+                                        <div class=" form-group">
+                                            <label> Nombre </label>
+                                            <input class="form-control" type="text" />
+                                        </div>
+                                    </div>
+
+                                    <div class=" col-md-6 pr-md-1">
+                                        <div class=" form-group">
+                                            <label> URL amigable </label>
+                                            <input class=" form-control" placeholder="/mipromo" type="text" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        <hr>
+
+                        <!--VIGENCIA-->
+                        <div class=" typography-line">
+                            <h5>Vigencia: Del {{fromDate.day+"-"+fromDate.month+"-"+fromDate.year }} {{ timeInicio.hour+":"+timeInicio.minute }} al 
+                                {{ toDate.day+"-"+toDate.month+"-"+toDate.year }} {{ timeFin.hour+":"+timeFin.minute }}
+                            </h5>
+                        </div>
+                        <div class="container">
+                        <div class="row pickerContainer">
+                            <div class="col-md-7 pr-md-1">
+
+                                <p>Días</p>
+                                
+                                <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+                                </ngb-datepicker>
+                                
+                                <ng-template #t let-date let-focused="focused">
+                                    <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                                        [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                                        (mouseleave)="hoveredDate = null">
+                                        {{ date.day }}
+                                    </span>
+                                </ng-template>
+                            </div>
+                            <div class="col-md-5 pr-md-1 ">
+
+                                <div class="form-group pickerCenterer">
+                                    <label> Hora inicio </label>
+                                    <ngb-timepicker [(ngModel)]="timeInicio" [ngModelOptions]="{standalone: true}"></ngb-timepicker>
+                                    
+                                </div>
+                                
+                                <div class=" form-group">
+                                    <label> Hora Fin </label>
+                                    <ngb-timepicker [(ngModel)]="timeFin" [ngModelOptions]="{standalone: true}"></ngb-timepicker>
+                                    
+                                </div>
+
+
+                            </div>
+                        </div>
+                        </div>
+                        <hr>
+                        <!--VIGENCIA FIN-->
+
+                        
+                        <!--Banners-->
+                        <div class=" typography-line">
+                            <h5>Banners/Imagenes:</h5>
+                            <div class="container">
+                                <div class="row text-center">
+                                    <div class="col-md-6">
+                                        <p>Imagen de premios</p><br>
+                                        
+                                        <img class="img-fluid overhand" src='assets/img/ftpdemo/fotoPremios.png' (click)="open(content)">                                        
+    
+                                    </div>
+                                    <div class="col-md-6">
+                                    
+                                        <p>Imagen de mecanica</p><br>
+                                        
+                                        <img class="img-fluid overhand" src='assets/img/ftpdemo/fotoMecanica.png' (click)="open(content)">
+                                    
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                        </div>
+                        <hr>
+                            
+                        <!--Fin Banners-->
+
+
+                        <!--Mecanica corta-->
+                        <div class=" typography-line">
+                            <h5>Mecanica corta:</h5>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="container">
+                                <textarea class="form-control border" placeholder="Mecanica Corta" id="floatingTextarea2" [(ngModel)]="mecanicaCorta" [ngModelOptions]="{standalone: true}" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Descripcion corta de mecanica para el home</label>
+                            </div>
+                        </div>
+                        <hr>
+                        <!--Fin Mecanica corta-->
+
+                        <!--Mecanica-->
+                        <div class=" typography-line">
+                            <h5>Mecanica:</h5>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="container">
+                                <angular-editor [(ngModel)]="mecanicaContent" [ngModelOptions]="{standalone: true}"  [config]="config"></angular-editor>
+                            </div>
+                        </div>
+                        <hr>
+                        
+                        <!--Fin Mecanica-->
+
+                        <!--Legales-->
+                        <div class=" typography-line">
+                            <h5>Legales:</h5>
+                            <div class="container">
+                                <angular-editor [(ngModel)]="legalesContent" [ngModelOptions]="{standalone: true}"  [config]="config"></angular-editor>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                        </div>
+                        <hr>                        
+                        <!--Fin Legales-->
+
+
+                    </form>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8"></div>
+                            <div class="col-4">
+                                <button class=" btn btn-danger btn-block">
+                                    Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!--Fin Crad body-->
+            </div><!--Fin Crad-->
+        </div><!--Fin col-12-->
+    </div><!--Fin row-->
+</div><!--Fin content-->
+
+
+<!--modal fotos-->
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">IMAGES</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Sube una imagen</p>
+
+        <form #f="ngForm" (ngSubmit)="onSubmitform(f)">
+            <input type="file" name="myFile" (change)="fileEvent($event)" />
+            <button type="button" class="btn btn-outline-dark">Upload Image</button>
+        </form>
+    </div>
+    <div class="modal-footer">
+        
+    </div>
+</ng-template>
+
+<!--fin modal fotos-->

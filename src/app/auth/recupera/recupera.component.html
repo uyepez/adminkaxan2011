@@ -1,0 +1,43 @@
+<div class="container vertical-center">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card-group">
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <h1>Olvidaste tu contraseña</h1>
+                            <p class="text-muted">Introduce el correo eletrónico con el que accedes a tu cuenta. En unos
+                                minutos recibiras un mail con un código para
+                                restablecer tu contraseña.</p>
+                            <div class=" form-group">
+                                <label> Username </label>
+                                <input class=" form-control" placeholder="Username" type="text" />
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-6"><button (click)="enviaCodigo()" type="button"
+                                        class="btn btn-primary px-4">Enviar</button>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <button type="button" class="btn btn-primary px-4"
+                                        (click)="regresarLogin()">Regresar</button>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6"></div>
+                                <div class="col-6 text-right">
+                                    <button (click)="codigo()" type="button" class="btn btn-link px-0">Ya tienes tu
+                                        código?</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
