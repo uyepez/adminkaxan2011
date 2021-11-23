@@ -4,20 +4,22 @@
             <div class="card-group">
                 <div class="card">
                     <div class="card-body">
-                        <form>
+                        <form [formGroup]="recuperaForm" (ngSubmit)="recupera()">
                             <h1>Olvidaste tu contraseña</h1>
                             <p class="text-muted">Introduce el correo eletrónico con el que accedes a tu cuenta. En unos
                                 minutos recibiras un mail con un código para
                                 restablecer tu contraseña.</p>
                             <div class=" form-group">
                                 <label> Username </label>
-                                <input class=" form-control" placeholder="Username" type="text" />
+                                <input class=" form-control" placeholder="Username" type="text" name="usernamerecupera"  required   formControlName="usernamerecupera"
+                                [class.is-invalid]="recuperaForm.get('usernamerecupera').invalid && recuperaForm.get('usernamerecupera').touched "
+                                [class.is-valid]="recuperaForm.get('usernamerecupera').valid && recuperaForm.get('usernamerecupera').touched">
                             </div>
 
 
 
                             <div class="row">
-                                <div class="col-6"><button (click)="enviaCodigo()" type="button"
+                                <div class="col-6"><button type="submit"
                                         class="btn btn-primary px-4">Enviar</button>
                                 </div>
                                 <div class="col-6 text-right">

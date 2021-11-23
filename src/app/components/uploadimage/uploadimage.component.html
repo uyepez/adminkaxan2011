@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-6">
+            <input type="file" id="file" class="input-file" (change)="onFileSelected($event)"
+                accept="image/x-png,image/gif,image/jpeg">
+        </div>
+
+        <div class="col-md-6">
+
+            <div>
+                <label for="">Preview</label>
+                <div>
+                    <img width="200px" [src]="imagenPrevia" alt="">
+                </div>
+                <p>Peso: {{ datosImagen.peso | number }} KB</p>
+                <p>{{ estatusSubida }} </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 wrapper-button">
+            <button class=" btn btn-danger btn-block" *ngIf="pesoValido" [disabled]="loading" (click)="loadImages()">
+
+                {{(loading) ? 'Cargando...' : 'Subir'}}
+            </button>
+        </div>
+
+    </div>
+
+</div>

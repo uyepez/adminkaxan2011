@@ -4,24 +4,34 @@
             <div class="card-group">
                 <div class="card">
                     <div class="card-body">
-                        <form>
+                        <form [formGroup]="loginForm" (ngSubmit)="login()">
                             <h1>Login</h1>
                             <p class="text-muted">Iniciar sesión</p>
                             <div class=" form-group">
                                 <label> Username </label>
-                                <input class=" form-control" type="text" />
+                                <input class=" form-control" type="text" required name="usuario" id="usuario"   formControlName="usuario"
+                                [class.is-invalid]="loginForm.get('usuario').invalid && loginForm.get('usuario').touched "
+                                [class.is-valid]="loginForm.get('usuario').valid && loginForm.get('usuario').touched"
+                                >
                             </div>
 
                             <div class=" form-group">
                                 <label> Password </label>
-                                <input class=" form-control" type="password" autocomplete="current-password" />
+                                <input class=" form-control" type="password" autocomplete="current-password"  required  name="contrasena" id="contrasena"  formControlName="contrasena"
+                               [class.is-invalid]="loginForm.get('contrasena').invalid && loginForm.get('contrasena').touched "
+                               [class.is-valid]="loginForm.get('contrasena').valid && loginForm.get('contrasena').touched"
+                            >
+
                             </div>
 
 
                             <div class="row">
-                                <div class="col-6"><button type="button" class="btn btn-primary px-4"
-                                        (click)="irHome()">Login</button>
+                                <div class="col-6"><button type="submit" class="btn btn-primary px-4">Login</button>
+
+
                                 </div>
+
+
                                 <div class="col-6 text-right"><button (click)="recupera()" type="button"
                                         class="btn btn-link px-0">¿Olvidaste tu contraseña?</button></div>
                             </div>

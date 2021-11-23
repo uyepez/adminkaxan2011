@@ -1,0 +1,106 @@
+<div class="content">
+
+        <div class="row">
+            <div class="col-3">
+                <button class=" btn btn-danger btn-block" (click)="irNuevaPromo()">Nueva</button>
+            </div>
+        </div>
+        
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+            <li [ngbNavItem]="1">
+                <a ngbNavLink>Publicado</a>
+                <ng-template ngbNavContent>
+                    <p>ninguna</p>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+                <a ngbNavLink>Borradores</a>
+                <ng-template ngbNavContent>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="card">
+                                <img src="assets/img/audifonos.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Borrador</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                        of the card's
+                                        content.</p>
+                                    <a href="#" class="card-link">borrador</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card">
+                                <img src="assets/img/audifonos.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Borrador</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                        of the card's
+                                        content.</p>
+                                    <a href="#" class="card-link">borrador</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card">
+                                <img src="assets/img/audifonos.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Borrador</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                        of the card's
+                                        content.</p>
+                                    <a href="#" class="card-link">borrador</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card">
+                                <img src="assets/img/audifonos.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Borrador</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                        of the card's
+                                        content.</p>
+                                    <a href="#" class="card-link">borrador</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+        
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="3">
+                <a ngbNavLink>Archivadas</a>
+                <ng-template ngbNavContent>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Archivado</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                        of the card's
+                                        content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </ng-template>
+            </li>
+        </ul>
+        
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+</div>

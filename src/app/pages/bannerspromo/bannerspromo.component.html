@@ -1,0 +1,89 @@
+<div class=" content">
+    <form action="">
+
+        <!--Banners-->
+        <div class=" row">
+            <div class=" col-md-12">
+                <h1>Banners:</h1>
+                <div class=" card">
+                    <div class="card-body">
+
+                        <div class=" typography-line">
+                            <h3 class="text-light">Elija los baners:
+                                <span class="fa fa-info-circle infoIcons" data-bs-toggle="tooltip" data-bs-html="true"
+                                    data-bs-placement="top" title="tamaños de las imagenes"></span>
+                            </h3>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                
+                                <div class=" typography-line">
+                                    <h5>Banners/Imagenes:</h5>
+                                    <div class="container">
+                                        <div class="row text-center">
+                                            <div class="col-md-12">
+                                                <p>Imagen de premios</p><br>
+                                                <app-uploadimage (imagenServida)="subioImagenPremio( $event )"  ></app-uploadimage>
+                                                
+                                            </div>
+                                            <div class="col-md-12">
+                                                <p>Imagen de mecanica</p><br>
+                                                <app-uploadimage  (imagenServida)="subioImagenMecanica( $event )" ></app-uploadimage>
+                                                
+                                            </div>
+                                            <div class="col-md-12">
+                                                <p>Imagen para compartir</p><br>
+                                                <app-uploadimage  (imagenServida)="subioImagenCompartir( $event )" ></app-uploadimage>
+                                                
+                                            </div>
+                                            <div class="col-md-12">
+                                                <p>Imagen para tarjeta</p><br>
+                                                <app-uploadimage  (imagenServida)="subioImagenTarjeta( $event )" ></app-uploadimage>
+                                                
+                                            </div>
+                                        </div>                                
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--Fin Crad body-->
+                </div>
+                <!--Fin Crad-->
+            </div>
+            <!--Fin col-12-->
+        </div>
+        <!--Fin row-->
+        <!--Fin Banners-->
+
+
+      
+
+
+     
+
+
+        
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-8"></div>
+                <div class="col-4">
+                    <button (click)="irMecanicas()" class=" btn btn-danger btn-block">
+                        Siguiente
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+<!--Fin content-->
+
+

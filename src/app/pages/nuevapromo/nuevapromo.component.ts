@@ -1,4 +1,5 @@
 import { Component, OnInit, Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbDateStruct, NgbDateParserFormatter, NgbDatepickerI18n, NgbDate, NgbCalendar, NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';  ////datepiker en español
 import { AngularEditorConfig } from '@kolkov/angular-editor'; //editor de texto html
 
@@ -126,7 +127,7 @@ export class NuevapromoComponent implements OnInit {
 
   mecanicaCorta = '';
 
-  constructor(calendar: NgbCalendar, private modalService: NgbModal, config: NgbModalConfig, private http: HttpClient) {
+  constructor(calendar: NgbCalendar, private modalService: NgbModal, config: NgbModalConfig, private http: HttpClient, private router: Router) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
 
@@ -194,38 +195,12 @@ export class NuevapromoComponent implements OnInit {
   };
   /******************Termina Editor de HTML****************/
   
-  /******************Modal*************************/
-  open(content) {
-    this.modalService.open(content);
-    //this.modalService.open(content, { size: 'lg' });
-  }
-  /******************Termina modal****************/
-  
-  /***********************FTP image*******************/
-  filedata: any;
-  /* File onchange event */
-  fileEvent(e: any) {
-    this.filedata = e.target.files[0];
-  }
-  /* Upload button  */
-  onSubmitform(f: NgForm) {
+ 
 
-    var myFormData = new FormData();
-    const headers = new HttpHeaders();
-    headers.append('Content-Type', 'multipart/form-data');
-    headers.append('Accept', 'application/json');
-    myFormData.append('image', this.filedata);
-    /* Image Post Request */
-    this.http.post('http://localhost/Angular/2021/dropzone/upload.php', myFormData, {
-      headers: headers
-    }).subscribe(data => {
-      //Check success message
-      console.log(data);
-    });
 
+  irBannersPromo(){
+    this.router.navigateByUrl('/bannerspromo');
   }
-
-  /******************termina FTP image****************/
 
 
 }

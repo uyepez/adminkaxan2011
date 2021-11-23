@@ -14,10 +14,20 @@ export class DashboardComponent implements OnInit {
   public clicked: boolean = true;
   public clicked1: boolean = false;
   public clicked2: boolean = false;
+  public datoUsuario: any;
 
   constructor() {}
 
+
+
   ngOnInit() {
+
+    this.datoUsuario = JSON.parse(localStorage.getItem('id'));
+  
+  console.log(this.datoUsuario);
+
+
+
     var gradientChartOptionsConfigurationWithTooltipBlue: any = {
       maintainAspectRatio: false,
       legend: {

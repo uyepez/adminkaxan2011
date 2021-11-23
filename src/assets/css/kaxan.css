@@ -15,3 +15,12 @@
 .overhand{
   cursor: pointer;
 }
+
+.input100{
+  width: 100%;
+}
+
+/*tamaño iconos info*/
+.infoIcons{
+  font-size: medium;
+}

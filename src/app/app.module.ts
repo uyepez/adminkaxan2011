@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
 import { ToastrModule } from 'ngx-toastr';
@@ -21,10 +21,20 @@ import { NuevapromoComponent } from './pages/nuevapromo/nuevapromo.component';
 
 //editor de tetxo
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { CategoriaComponent } from './pages/categoria/categoria.component';
+import { PatrocinadorComponent } from './pages/patrocinador/patrocinador.component';
+import { ClienteComponent } from './pages/cliente/cliente.component';
+import { MetaComponent } from './pages/meta/meta.component';
+import { BannersComponent } from './pages/banners/banners.component';
+import { MarcaComponent } from './pages/marca/marca.component';
+import { PromosComponent } from './pages/promos/promos.component';
+import { BannerspromoComponent } from './pages/bannerspromo/bannerspromo.component';
+import { ListapromosComponent } from './pages/listapromos/listapromos.component';
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     ComponentsModule,
@@ -34,7 +44,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     AngularEditorModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, LoginComponent, RecuperaComponent, RecuperacodigoComponent, RegistroComponent, NuevapromoComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, LoginComponent, RecuperaComponent, RecuperacodigoComponent, RegistroComponent, NuevapromoComponent, CategoriaComponent, PatrocinadorComponent, ClienteComponent, MetaComponent, BannersComponent, MarcaComponent, PromosComponent, BannerspromoComponent, ListapromosComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

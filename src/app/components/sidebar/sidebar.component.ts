@@ -20,12 +20,6 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
-    path: "/maps",
-    title: "Maps",
-    icon: "icon-pin",
-    class: ""
-  },
-  {
     path: "/notifications",
     title: "Notifications",
     icon: "icon-bell-55",
@@ -38,7 +32,7 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-single-02",
     class: ""
   },
-  {
+  /*{
     path: "/tables",
     title: "Table List",
     icon: "icon-puzzle-10",
@@ -50,18 +44,53 @@ export const ROUTES: RouteInfo[] = [
 
     icon: "icon-align-center",
     class: ""
+  },*/
+  {
+    path: "/categoria",
+    title: "Categoria",
+    icon: "icon-components",
+    class: ""
   },
   {
-    path: "/nuevapromo",
+    path: "/cliente",
+    title: "Cliente",
+    icon: "icon-single-02",
+    class: ""
+  },
+  {
+    path: "/marca",
+    title: "Marcas",
+    icon: "icon-puzzle-10",
+    class: ""
+  },
+  {
+    path: "/metas",
+    title: "Metas",
+    icon: "icon-tag",
+    class: ""
+  },
+  {
+    path: "/patrocinador",
+    title: "Patrocinador",
+    icon: "icon-wallet-43",
+    class: ""
+  },
+  {
+    path: "/listapromos",
     title: "Nueva",
-
-    icon: "icon-components",
+    icon: "icon-bulb-63",
+    class: ""
+  },
+  {
+    path: "/banners",
+    title: "Banners",
+    icon: "icon-image-02",
     class: ""
   },
   {
     path: "/login",
     title: "LOGIN",
-    icon: "icon-world",
+    icon: "icon-lock-circle",
     class: ""
   }
 ];
