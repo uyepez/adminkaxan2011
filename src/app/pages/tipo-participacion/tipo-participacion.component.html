@@ -1,0 +1,227 @@
+<div class=" content">
+    <form action="">
+
+        <!--Banners-->
+        <div class=" row">
+            <div class=" col-md-12">
+                <h1>Mecanicas:</h1>
+                <div class=" card">
+                    <div class="card-body">
+
+                        <div class=" typography-line">
+                            <h3 class="text-light">Elija los tipos de mecanicas de participacion:
+                                <span class="fa fa-info-circle infoIcons" data-bs-toggle="tooltip" data-bs-html="true"
+                                    data-bs-placement="top" title="Selecciona el tipo o tipo de mecanicas para la participacion"></span>
+                            </h3>
+                        </div>
+                        <div class="container">
+                            <div class=" row"><label class=" col-sm-2 col-form-label"> Selecciona una o varias </label>
+                                <div class=" col-sm-10 checkbox-radios">
+                                    <div class=" form-check">
+                                        <label class=" form-check-label"><input class=" form-check-input" name="ticket" value="ticket" type="checkbox" (change)="eventCheck($event)" ><span class=" form-check-sign"></span> Registro de ticket </label>
+                                    </div>
+                                    <div class=" form-check">
+                                        <label class=" form-check-label"><input class=" form-check-input" name="fotoTicket" value="fotoTicket" type="checkbox"(change)="eventCheck($event)" ><span class=" form-check-sign"></span> Foto de ticket </label>
+                                    </div>
+                                    <div class=" form-check">
+                                        <label class=" form-check-label"><input class=" form-check-input" name="historia" value="historia" type="checkbox"(change)="eventCheck($event)" ><span class=" form-check-sign"></span> Historia </label>
+                                    </div>
+                                    <div class=" form-check">
+                                        <label class=" form-check-label"><input class=" form-check-input" name="trivia" value="trivia" type="checkbox"(change)="eventCheck($event)" ><span class=" form-check-sign"></span> Trivia </label>
+                                    </div>
+                                    <div class=" form-check">
+                                        <label class=" form-check-label"><input class=" form-check-input" name="fotoDiferencias" value="fotoDiferencias" type="checkbox"(change)="eventCheck($event)" ><span class=" form-check-sign"></span> Foto encuentra las diferencias </label>
+                                    </div>
+                                    <div class=" form-check">
+                                        <label class=" form-check-label"><input class=" form-check-input" name="fotoCreativa" value="fotoCreativa" type="checkbox"(change)="eventCheck($event)" ><span class=" form-check-sign"></span> Foto creativa </label>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--Fin Crad body-->
+                </div>
+                <!--Fin Crad-->
+                
+                <!--Crad ticket-->
+                <div class=" card" *ngIf="this.tiposMecanicas.ticket" >
+                    <div class=" card-header">
+                        <h4 class=" card-title">Datos ticket</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class=" row">
+                            <label class="col-sm-2 col-form-label"> Expresion regular </label>
+                            <div class="col-sm-7">
+                                <div class="form-group"><input class=" form-control" type="text"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--Fin Crad ticket-->
+
+
+                <!--Crad foto ticket-->
+                <div class=" card" *ngIf="this.tiposMecanicas.fotoTicket">
+                    <div class=" card-header">
+                        <h4 class=" card-title">Foto ticket</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class=" row">
+                            <label class="col-sm-2 col-form-label"> Texto escriptivo  </label>
+                            <div class="col-sm-7">
+                                <div class="form-group"><input class=" form-control" type="text"></div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                <!--Fin Crad foto ticket-->
+
+                <!--Crad Historia-->
+                <div class=" card" *ngIf="this.tiposMecanicas.historia">
+                    <div class=" card-header">
+                        <h4 class=" card-title">Historia</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class=" row">
+                            <label class="col-sm-2 col-form-label"> Instruciones de la historia  </label>
+                            <div class="col-sm-7">
+                                <div class="form-group"><input class=" form-control" type="text"></div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                <!--Fin Crad historia-->
+
+
+                <!--Crad trivia-->
+                <div class=" card" *ngIf="this.tiposMecanicas.trivia">
+                    <div class=" card-header">
+                        <h4 class=" card-title">Trivia</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class=" row">
+                            <label class="col-sm-2 col-form-label"> Sube archivo para la trivia </label>
+                            <div class="col-sm-7">
+                                <div ><input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                    <span class=" form-text"> Archivo XLSX, con preguntas y respuestas en columnas. </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                <!--Fin Crad trivia-->
+
+                <!--Crad Foto diferencias-->
+                <div class=" card" *ngIf="this.tiposMecanicas.fotoDiferencias">
+                    <div class=" card-header">
+                        <h4 class=" card-title">Encuantras las diferencias</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class=" row">
+                            <label class="col-sm-2 col-form-label"> Instruciones para encontrar las diferencias </label>
+                            <div class="col-sm-7">
+                                <div class="form-group"><input class=" form-control" type="text"></div>
+                            </div>
+                        </div>
+
+                        <div class=" row">
+                            <label class="col-sm-2 col-form-label"> Sube imagen para encontrar las diferencias </label>
+                            <div class="col-sm-10">
+                                <div>
+                                    <app-uploadimage (imagenServida)="subioImagenDiferencias( $event )"></app-uploadimage>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                <!--Fin Crad Foto diferencias-->
+
+
+                <!--Crad Foto creativa-->
+                <div class=" card" *ngIf="this.tiposMecanicas.fotoCreativa">
+                    <div class=" card-header">
+                        <h4 class=" card-title">Foto creativa</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class=" row">
+                            <label class="col-sm-2 col-form-label"> Instruciones para la foto creativa </label>
+                            <div class="col-sm-7">
+                                <div class="form-group"><input class=" form-control" type="text"></div>
+                            </div>
+                        </div>
+                
+                    </div>
+                
+                </div>
+                <!--Fin Crad Foto diferencias-->
+
+
+                <!--Crad puntos KAXAN-->
+                <div class=" card">
+                    <div class=" card-header">
+                        <h4 class=" card-title">Puntos KAXAN</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class=" row">
+                            <label class="col-sm-2 col-form-label"> Puntos por participar </label>
+                            <div class="col-sm-7">
+                                <div class="form-group"><input class=" form-control" type="text"></div>
+                            </div>
+                        </div>
+                
+                    </div>
+                
+                </div>
+                <!--Fin Crad Puntos kaxan-->
+                
+
+
+            </div>
+            <!--Fin col-12-->
+        </div>
+        <!--Fin row-->
+        <!--Fin Banners-->
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-8"></div>
+                <div class="col-4">
+                    <button  class=" btn btn-danger btn-block" (click)="irEstatus()">
+                        Siguiente
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+<!--Fin content-->
+
+<!-- RADIO BUTTONS-->
+<!--<div class=" form-check form-check-radio">
+                                        <label class=" form-check-label"><input checked="checked" class=" form-check-input" id="exampleRadios1" name="exampleRadios" type="radio" value="option1"><span class=" form-check-sign"></span> First Radio </label>
+                                    </div>
+                                    <div class=" form-check form-check-radio">
+                                        <label class=" form-check-label"><input class=" form-check-input" id="exampleRadios2" name="exampleRadios" type="radio" value="option2"><span class=" form-check-sign"></span> Second Radio </label>
+                                    </div>-->
+<!-- RADIO BUTTONS-->

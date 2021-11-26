@@ -30,6 +30,8 @@ import { MarcaComponent } from './pages/marca/marca.component';
 import { PromosComponent } from './pages/promos/promos.component';
 import { BannerspromoComponent } from './pages/bannerspromo/bannerspromo.component';
 import { ListapromosComponent } from './pages/listapromos/listapromos.component';
+import { TipoParticipacionComponent } from './pages/tipo-participacion/tipo-participacion.component';
+import { EstatusPromocionComponent } from './pages/estatus-promocion/estatus-promocion.component';
 
 @NgModule({
   imports: [
@@ -44,7 +46,7 @@ import { ListapromosComponent } from './pages/listapromos/listapromos.component'
     AngularEditorModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, LoginComponent, RecuperaComponent, RecuperacodigoComponent, RegistroComponent, NuevapromoComponent, CategoriaComponent, PatrocinadorComponent, ClienteComponent, MetaComponent, BannersComponent, MarcaComponent, PromosComponent, BannerspromoComponent, ListapromosComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, LoginComponent, RecuperaComponent, RecuperacodigoComponent, RegistroComponent, NuevapromoComponent, CategoriaComponent, PatrocinadorComponent, ClienteComponent, MetaComponent, BannersComponent, MarcaComponent, PromosComponent, BannerspromoComponent, ListapromosComponent, TipoParticipacionComponent, EstatusPromocionComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

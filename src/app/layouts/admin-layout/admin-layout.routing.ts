@@ -18,6 +18,8 @@ import { MarcaComponent } from '../../pages/marca/marca.component';
 import { BannerspromoComponent } from '../../pages/bannerspromo/bannerspromo.component';
 import { UploadimageComponent } from '../../components/uploadimage/uploadimage.component';
 import { ListapromosComponent } from '../../pages/listapromos/listapromos.component';
+import { TipoParticipacionComponent } from '../../pages/tipo-participacion/tipo-participacion.component';
+import { EstatusPromocionComponent } from '../../pages/estatus-promocion/estatus-promocion.component';
 
 export const AdminLayoutRoutes: Routes = [
   { path: "dashboard", component: DashboardComponent },
@@ -37,5 +39,7 @@ export const AdminLayoutRoutes: Routes = [
   { path: "bannerspromo", component: BannerspromoComponent },
   { path: "upload", component: UploadimageComponent },
   { path: "listapromos", component: ListapromosComponent },
+  { path: "tipoParticipaciones", component: TipoParticipacionComponent },
+  { path: "estatusPromocion", component: EstatusPromocionComponent },
   // { path: "rtl", component: RtlComponent }
 ];

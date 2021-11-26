@@ -40,9 +40,9 @@ imgTarjeta : any;
   }
 
 
-  irMecanicas(){
-    //this.router.navigateByUrl('/mecanicapromo');
-    console.log("premio:", this.imgPremio);
+  irTipoPromos(){
+    this.router.navigateByUrl('/tipoParticipaciones');
+    //console.log("premio:", this.imgPremio);
     
   }
 

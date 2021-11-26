@@ -50,6 +50,8 @@ export class LoginComponent implements OnInit {
 
 
    login(){
+     console.log("hola");
+     
 
          if (this.loginForm.valid) {
            Swal.fire({
@@ -60,7 +62,7 @@ export class LoginComponent implements OnInit {
            });
            Swal.showLoading();
 
-        //   console.log(this.loginServ.login);
+           console.log(this.loginServ.login);
 
  for (const key in this.loginForm.controls) {
  const control = this.loginForm.get(key);
