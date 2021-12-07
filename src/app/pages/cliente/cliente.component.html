@@ -6,7 +6,7 @@
             <!--nueva categoria-->
             <div class="card">
                 <div class="card-body">
-                    <form action="">
+                    <form [formGroup]="registroForm" (ngSubmit)="registroEntidad()">
                         <div class=" typography-line">
                             <h1>Nuevo cliente:</h1>
                             <div class="container">
@@ -16,7 +16,13 @@
                                     <div class=" col-md-6 pr-md-1">
                                         <div class=" form-group">
                                             <label> Nombre cliete</label>
-                                            <input class="form-control" type="text" />
+                                            <input type="text" class="form-control" placeholder="entidad" name="nombre" formControlName="nombre"
+                                                [class.is-invalid]="registroForm.get('nombre').invalid && registroForm.get('nombre').touched "
+                                                [class.is-valid]="registroForm.get('nombre').valid && registroForm.get('nombre').touched">
+                                            <span class="text-danger"
+                                                *ngIf="isSubmitReg && (errorControl.nombre.errors?.required || errorControl.nombre.errors?.pattern || errorControl.nombre.errors?.minLength)">
+                                                Este campo es requerido y solo se aceptan letras, números y mínimo de caracteres (3).
+                                            </span>
                                         </div>
                                     </div>
 
@@ -26,7 +32,7 @@
 
                                 </div>
                                 <div class="row">
-                                    <div class=" col-md-4"><button class=" btn btn-primary btn-block"><i
+                                    <div class=" col-md-4"><button type="submit" class=" btn btn-primary btn-block"><i
                                                 class=" tim-icons icon-cloud-upload-94"> </i> Guardar</button></div>
                                     <div class=" col-md-4"></div>
                                     <div class=" col-md-4"></div>
@@ -46,22 +52,24 @@
                 <div class=" card-body">
                     <div class=" table-responsive-md">
                         <table class=" table tablesorter table-hover" id="">
-                            <thead class=" text-primary table-dark">
+                            <thead class=" text-primary table-dark text-center">
                                 <tr>
                                     <th>Cliente</th>
                                  
-                                    <th>Acciones</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Bayer</td>
+                                <tr  *ngFor="let entidad of this.listaRegistrosFiltro">
+                                    <td>{{ entidad.cNombre }}</td>
                                     
-                                    <td>
-                                        <button class=" btn btn-danger"><i class=" tim-icons icon-trash-simple">
-                                            </i></button>&nbsp;&nbsp;
-                                        <button class=" btn btn-info"><i class=" tim-icons icon-pencil"> </i></button>
+                                    <td  class="text-center">
+                                        <button class=" btn btn-info" (click)="popActualiza( entidad.nId )"><i class=" tim-icons icon-pencil"> </i></button>                                            
+                                    </td>
+                                    <td  class="text-center">
+                                        <button class=" btn btn-danger" (click)="popElimina( entidad.nId )" ><i class=" tim-icons icon-trash-simple"></i></button>
                                     </td>
                                 </tr>
                             </tbody>
